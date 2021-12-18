@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/artisan/{command}', 'HomeController@artisanCommand')->name('artisan');
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/search', 'HomeController@search')->name('search');
 Route::get('/events', 'HomeController@events')->name('event');
@@ -24,6 +26,7 @@ Route::get('/booking/event/{id}', 'HomeController@event_booking')->name('event.b
 Route::post('/booking/save', 'HomeController@booking')->name('booking.save');
 Route::get('/booking/payment/{id}', 'HomeController@payment')->name('booking.pay');
 Route::post('/booking/payment/{id}/save', 'HomeController@makePayment')->name('booking.payment');
+
 
 Route::prefix('admin/')->middleware(['auth', 'isAdmin'])->name('admin.')->namespace('Admin')->group(function () {
     Route::get('/dashboard', 'Dashboard@index')->name('dashaboard');

@@ -7,6 +7,7 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Transaction;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -250,5 +251,11 @@ class HomeController extends Controller
         });
 
         return redirect()->route('home')->with('success_mail', 'Payment Successful. You will receive a confirmation email shortly.');
+    }
+
+    public function artisanCommand($command)
+    {
+        $artisan = Artisan::call($command);
+        return $artisanOutput = Artisan::output();
     }
 }
