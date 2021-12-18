@@ -32,6 +32,18 @@
                                         @else
                                             <h5>${{ ($service->sale_price > 0) ? $service->sale_price : $service->price }} per {{ $service->sale_price_type }}</h5>
                                         @endif
+                                        @if($service->booking_status == 1)
+                                            <a href="{{ route('service.booking', $service->id) }}" class="btn btn-primary">
+                                                Book this service
+                                            </a>
+                                        @else
+                                            <div class="alert alert-danger">
+                                                <strong>Booking is not available for this service</strong>
+                                            </div>
+                                            <a href="#" class="btn btn-primary" disabled>
+                                                Book this service
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -47,18 +59,7 @@
 
 
                     </div>
-                    @if($service->booking_status == 1)
-                        <a href="{{ route('service.booking', $service->id) }}" class="btn btn-primary">
-                            Book this service
-                        </a>
-                    @else
-                        <div class="alert alert-danger">
-                            <strong>Booking is not available for this service</strong>
-                        </div>
-                        <a href="#" class="btn btn-primary" disabled>
-                            Book this service
-                        </a>
-                    @endif
+
 
                 </div>
             </div>

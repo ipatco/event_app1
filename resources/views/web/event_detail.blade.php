@@ -30,6 +30,18 @@
                                 <h6><span class="h5">Event Organiser Phone: </span>{{ $event->o_phone }}</h6>
                                 <h6><span class="h5">Event Organiser Email: </span>{{ $event->o_email }}</h6>
                                 <h6><span class="h5">Booking Organiser Website: </span><a href="{{ $event->o_website }}">{{ $event->o_website }}</a></h6>
+                                @if($event->booking_status == 1)
+                                    <a href="{{ route('event.booking', $event->id) }}" class="btn btn-primary">
+                                        Book this event
+                                    </a>
+                                @else
+                                    <div class="alert alert-danger">
+                                        <strong>Booking is not available for this event</strong>
+                                    </div>
+                                    <a href="#" class="btn btn-primary disabled">
+                                        Book this event
+                                    </a>
+                                @endif
                             </div>
                             <div class="col-md-6">
                                 <img src="{{ asset('uploads/events/'.$event->image) }}" class="img-fluid mb-4 w-100" alt="">
@@ -41,18 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    @if($event->booking_status == 1)
-                        <a href="{{ route('event.booking', $event->id) }}" class="btn btn-primary">
-                            Book this event
-                        </a>
-                    @else
-                        <div class="alert alert-danger">
-                            <strong>Booking is not available for this event</strong>
-                        </div>
-                        <a href="#" class="btn btn-primary disabled">
-                            Book this event
-                        </a>
-                    @endif
+
                 </div>
             </div>
         </div>
