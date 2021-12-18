@@ -81,7 +81,7 @@
     <div id="wrapper">
         <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion sidebar-color" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.dashaboard') }}">
-                <img src="/assets/img/logo.JPG" class="img-fluid" alt="" style="height: 65px;">
+                <img src="/assets/img/logo.PNG" class="img-fluid" alt="" style="height: 65px;">
             </a>
             <hr class="sidebar-divider my-0">
             <li class="nav-item">
