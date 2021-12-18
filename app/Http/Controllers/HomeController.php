@@ -194,6 +194,7 @@ class HomeController extends Controller
         $transaction = new Transaction();
         //user_id 	booking_id 	payment_id 	payment_status 	payment_type 	payment_amount 	payment_currency
         $transaction->user_id = auth()->user()->id;
+        $transaction->vendor_id = $booking->vendor_id;
         $transaction->booking_id = $id;
         $transaction->payment_id = $token->id;
         $transaction->payment_status = 'success';

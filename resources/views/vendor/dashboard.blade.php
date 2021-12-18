@@ -127,8 +127,8 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('assets/vendor/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('assets/js/demo/chart-area-demo.js') }}"></script>
     <script>
         var ctx = document.getElementById("lineChart");
         var myLineChart = new Chart(ctx, {

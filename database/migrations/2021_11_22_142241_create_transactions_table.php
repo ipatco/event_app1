@@ -17,6 +17,7 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('booking_id');
+            $table->unsignedBigInteger('vendor_id');
             $table->string('payment_id')->nullable();
             $table->string('payment_status')->nullable();
             $table->string('payment_type')->nullable();
@@ -24,6 +25,7 @@ class CreateTransactionsTable extends Migration
             $table->string('payment_currency')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('booking_id')->references('id')->on('bookings')->onDelete('cascade');
+            $table->foreign('vendor_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

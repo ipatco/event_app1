@@ -17,12 +17,12 @@ class Dashboard extends Controller
         $service = Service::where('user_id', auth()->user()->id)->count();
         $event = Event::where('user_id', auth()->user()->id)->count();
         $upcoming = Event::where('user_id', auth()->user()->id)->where('end_date', '>', now())->count();
-        $earning = Transaction::where('user_id', auth()->user()->id)->sum('payment_amount');
+        $earning = Transaction::where('vendor_id', auth()->user()->id)->sum('payment_amount');
         $thisMonth = Carbon::now()->startOfMonth()->format('m');
         $numOfDays = Carbon::now()->daysInMonth;
         for ($i = 1; $i <= $numOfDays; $i++) {
             $day = Carbon::now()->startOfMonth()->addDays($i - 1)->format('d');
-            $dayEarning = Transaction::where('user_id', auth()->user()->id)->whereDay('created_at', $day)->whereMonth('created_at', $thisMonth)->get();
+            $dayEarning = Transaction::where('vendor_id', auth()->user()->id)->whereDay('created_at', $day)->whereMonth('created_at', $thisMonth)->get();
             $dayEarning = $dayEarning->sum('payment_amount');
             $monthEarning[$i] = $dayEarning;
         }
