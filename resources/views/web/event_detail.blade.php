@@ -23,7 +23,12 @@
                                 @else
                                     <h6><span class="h5">Price: </span>${{ ($event->sale_price > 0) ? $event->sale_price : $event->price }} per person</h6>
                                 @endif
-                                <h6><span class="h5">Event Date: </span>{{ date('M d, Y', strtotime($event->start_date)) }} to {{ date('M d, Y', strtotime($event->end_date)) }}</h6>
+                                @if($event->start_date == $event->end_date)
+                                    <h6><span class="h5">Event Date: </span>{{ $event->start_date }}</h6>
+                                    @else
+                                    <h6><span class="h5">Event Date: </span>{{ date('M d, Y', strtotime($event->start_date)) }} to {{ date('M d, Y', strtotime($event->end_date)) }}</h6>
+                                    <div class="text-sm mb-0 font-weight-bold text-gray-800"><i class="fas fa-calendar-alt"></i> {{ $event->start_date . ' - ' . $event->end_date }}</div>
+                                @endif
                                 <h6><span class="h5">Event Location: </span>{{ $event->location }}</h6>
                                 <h6><span class="h5">Event Category: </span>{{ $event->category->name }}</h6>
                                 <h6><span class="h5">Event Organiser: </span>{{ $event->o_name }}</h6>
