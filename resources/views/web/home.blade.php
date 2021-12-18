@@ -48,7 +48,7 @@
                                     @if($event->price == 0)
                                         <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">Free</div>
                                     @else
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">${!! ($event->sale_price > 0) ? '<s class="mr-3">'.$event->price.'</s>' . '$'.$event->sale_price : $event->price !!} per Ticket</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">${!! ($event->sale_price > 0) ? '<s class="mr-3">'.$event->price.'</s>' . '$'.$event->sale_price : $event->price !!} Per Ticket</div>
                                     @endif
                                     @if($event->start_date == $event->end_date)
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $event->start_date }}</div>
@@ -83,7 +83,7 @@
                                     @if($service->price == 0)
                                         <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">Free</div>
                                     @else
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">${!! ($service->sale_price > 0) ? '<s class="mr-3">'.$service->price.'</s>' . '$'.$service->sale_price : $service->price !!} per {{ $service->sale_price_type }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">${!! ($service->sale_price > 0) ? '<s class="mr-3">'.$service->price.'</s>' . '$'.$service->sale_price : $service->price !!}  {{ $service->sale_price_type }}</div>
                                     @endif
                                 </div>
                             </div>
