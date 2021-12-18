@@ -51,7 +51,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">${!! ($event->sale_price > 0) ? '<s class="mr-3">'.$event->price.'</s>' . '$'.$event->sale_price : $event->price !!} Per Ticket</div>
                                     @endif
                                     @if($event->start_date == $event->end_date)
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $event->start_date }}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><i class="fas fa-calendar-alt"></i> {{ $event->start_date }}</div>
                                     @else
                                         <div class="text-sm mb-0 font-weight-bold text-gray-800"><i class="fas fa-calendar-alt"></i> {{ $event->start_date . ' - ' . $event->end_date }}</div>
                                     @endif
