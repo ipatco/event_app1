@@ -174,7 +174,7 @@
                         </button>
                         <h4 class="text-center">
                             <a class="text-white" href="{{ '/' }}">
-                                <img src="/assets/img/logo.JPG" alt="logo" height="65px" class="mt-c">
+                                <img src="/assets/img/logo.PNG" alt="logo" height="65px" class="mt-c">
                                 {{-- <span class="fs-30px">{{env('APP_NAME')}}</span> --}}
                             </a>
                         </h4>
