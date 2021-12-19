@@ -20,18 +20,19 @@
                                 <p>{{ $service->description }}</p>
                                 <div class="row mb-3">
                                     <div class="col-md-12">
-                                        <h5>Service Category:</h5>
-                                        <h5>{{ $service->category->name }}</h5>
+                                        <h6><span class="dlbl">Service Category:
+                                        </span>{{ $service->category->name }}</h6>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-md-12">
-                                        <h5>Service Price:</h5>
+                                        <h6><span class="dlbl">Service Price:</span>
                                         @if($service->price == 0)
-                                            <h5>Free</h5>
+                                            Free
                                         @else
-                                            <h5>${{ ($service->sale_price > 0) ? $service->sale_price : $service->price }} per {{ $service->sale_price_type }}</h5>
+                                            ${{ ($service->sale_price > 0) ? $service->sale_price : $service->price }}  {{ $service->sale_price_type }}
                                         @endif
+                                        </h6>
                                         @if($service->booking_status == 1)
                                             <a href="{{ route('service.booking', $service->id) }}" class="btn btn-primary">
                                                 Book this service

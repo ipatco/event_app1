@@ -162,6 +162,13 @@
                 font-size: 17px;
                 padding: 5px 8px 0px 15px;
             }
+
+            .dlbl{
+                color: #1508CA ;
+                font-weight: bold;
+
+            }
+            }
             </style>
     </head>
     <body id="page-top">
@@ -197,7 +204,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; {{ env('APP_NAME') }} {{ date('Y') }}</span>
+                            <span>Copyright &copy; {{ env('APP_NAME') }} {{ date('Y') }} - 2022</span>
                         </div>
                     </div>
                 </footer>
