@@ -413,9 +413,10 @@
                                         <x-book-list title="Event Organiser Phone:" :value="$booking->event->o_phone"/>
                                         <x-book-list title="Event Organiser Email:" :value="$booking->event->o_email"/>
                                         <x-book-list title="Booking Organiser Website:" :value="$booking->event->o_website"/>
+                                        <x-book-list title="Number of People:" :value="$booking->num_of_people"/>
                                     @else
                                         <x-book-list title="Service Name:" :value="$booking->service->title"/>
-                                        <x-book-list title="Service Date:" value="{{ date('M d, Y', strtotime($booking->service->start_date)) }} to {{ date('M d, Y', strtotime($booking->service->end_date)) }}"/>
+                                        <x-book-list title="Number of Item:" :value="$booking->num_of_people"/>
                                     @endif
                                         <x-book-list title="Booking Name:" :value="$booking->name"/>
                                         <x-book-list title="Booking Email:" :value="$booking->email"/>
@@ -426,7 +427,6 @@
                                         <x-book-list title="Booking Payment Status:" :value="$booking->transaction->payment_status"/>
                                         <x-book-list title="Booking Payment Amount:" value="{{ $booking->transaction->payment_currency.' '.$booking->transaction->payment_amount }}"/>
                                     @else
-                                        <x-book-list title="Payment not done" value="You haven't paid yet"/>
                                     @endif
 
                                 </table>
