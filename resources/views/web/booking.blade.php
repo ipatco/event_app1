@@ -11,9 +11,9 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     @if($type == 's')
-                    <h6 class="m-0 font-weight-bold text-primary">Book "{{ $title }}" for ${{ $price }} per {{ $time }}</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Book "{{ $title }}" for ${{ $price }}  {{ $time }}</h6>
                     @elseif($type == 'e')
-                    <h6 class="m-0 font-weight-bold text-primary">Book "{{ $title }}" for ${{ $price }} per people/person</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Book "{{ $title }}" for ${{ $price }} Per Ticket</h6>
                     @endif
                 </div>
                 <div class="card-body">

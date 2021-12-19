@@ -24,9 +24,9 @@
                     <div class="col mr-2">
                         <div class="text-sm font-weight-bold text-primary text-uppercase mb-1 trim-text">{{ $service->title }}</div>
                         @if($service->price == 0)
-                            <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">Free</div>
+                            <div class="text-sm mb-0 font-weight-bold text-gray-800 mb-2">Free</div>
                         @else
-                            <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">${!! ($service->sale_price > 0) ? '<s class="mr-3">'.$service->price.'</s>' . '$'.$service->sale_price : $service->price !!}  {{ $service->sale_price_type }}</div>
+                            <div class="text-sm mb-0 font-weight-bold text-gray-800 mb-2">${!! ($service->sale_price > 0) ? '<s class="mr-3">'.$service->price.'</s>' . '$'.$service->sale_price : $service->price !!}  {{ $service->sale_price_type }}</div>
                         @endif
                     </div>
                 </div>

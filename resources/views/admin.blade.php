@@ -95,7 +95,7 @@
                 </a>
             </li>
             <hr class="sidebar-divider">
-            <div class="sidebar-heading">Catelog</div>
+            <div class="sidebar-heading">Catalog</div>
             <li class="nav-item">
                 <a class="nav-link text-white nav-menu-size" href="{{ route('admin.events') }}">
                     <i class="fas fa-fw fa-calendar"></i>
@@ -187,7 +187,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; {{ env('APP_NAME') }} {{ date('Y') }}</span>
+                        <span>Copyright &copy; {{ env('APP_NAME') }} {{ date('Y') }} - 2022</span>
                     </div>
                 </div>
             </footer>

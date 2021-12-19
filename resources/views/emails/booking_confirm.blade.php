@@ -421,7 +421,7 @@
                                         <x-book-list title="Booking Name:" :value="$booking->name"/>
                                         <x-book-list title="Booking Email:" :value="$booking->email"/>
                                         <x-book-list title="Booking Phone:" :value="$booking->phone"/>
-                                        <x-book-list title="Booking Date:" :value="$booking->booking_date"/>
+                                        <x-book-list title="Date:" :value="$booking->booking_date"/>
                                     @if($booking->transaction)
                                         <x-book-list title="Booking Payment ID:" :value="$booking->transaction->payment_id"/>
                                         <x-book-list title="Booking Payment Status:" :value="$booking->transaction->payment_status"/>
