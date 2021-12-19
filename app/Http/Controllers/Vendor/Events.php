@@ -17,7 +17,7 @@ class Events extends Controller
     public function index()
     {
         $categories = Category::where('status', 1)->where(function ($query) {
-            $query->where('type', 'service')->orWhere('type', 'both');
+            $query->where('type', 'event')->orWhere('type', 'both');
         })->get();
         $events = Event::with(['category'])->where('user_id', '=', auth()->user()->id)->orderByDesc('created_at')->get();
         return view('vendor.events.manage', compact('events'));
@@ -31,7 +31,7 @@ class Events extends Controller
     public function create()
     {
         $categories = Category::where('status', 1)->where(function ($query) {
-            $query->where('type', 'service')->orWhere('type', 'both');
+            $query->where('type', 'event')->orWhere('type', 'both');
         })->get();
         return view('vendor.events.create', compact('categories'));
     }
@@ -109,7 +109,7 @@ class Events extends Controller
     {
         $event = Event::find($id);
         $categories = Category::where('status', 1)->where(function ($query) {
-            $query->where('type', 'service')->orWhere('type', 'both');
+            $query->where('type', 'event')->orWhere('type', 'both');
         })->get();
         return view('vendor.events.edit', compact('categories', 'event'));
     }

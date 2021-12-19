@@ -65,6 +65,10 @@
         ::placeholder{
             color: rgb(165, 165, 165) !important;
         }
+        .sidebar-brand{
+            border: 5px solid black;
+            padding: 0px !important;
+        }
     </style>
 </head>
 
@@ -72,10 +76,7 @@
     <div id="wrapper">
         <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('vendor.dashboard') }}">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Event App</div>
+                <img src="/assets/img/logo.PNG" class="img-fluid" alt="" style="height: 65px;">
             </a>
             <hr class="sidebar-divider my-0">
             <li class="nav-item">

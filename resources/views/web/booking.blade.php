@@ -36,7 +36,7 @@
                         @if ($service == 1)
                             <div class="form-group">
                                 <label for="num_of_people">Item Count</label>
-                                <input type="number" class="form-control" id="num_of_people" name="num_of_people" placeholder="Item Count" value="{{ old('num_of_people') }}">
+                                <input type="number" class="form-control" id="num_of_people" name="num_of_people" placeholder="Item Count" value="{{ old('num_of_people') }}" min="1" required>
                             </div>
 
                             <input type="hidden" name="service_id" value="{{ $id }}">
@@ -44,7 +44,7 @@
                         @if ($event == 1)
                             <div class="form-group">
                                 <label for="num_of_people">Number of Person</label>
-                                <input type="number" class="form-control" id="num_of_people" name="num_of_people" placeholder="Number of Person" value="{{ old('num_of_people') }}">
+                                <input type="number" class="form-control" id="num_of_people" name="num_of_people" placeholder="Number of Person" value="{{ old('num_of_people') }}" min="1" required>
                             </div>
 
                             <input type="hidden" name="event_id" value="{{ $id }}">

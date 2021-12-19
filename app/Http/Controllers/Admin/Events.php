@@ -18,7 +18,7 @@ class Events extends Controller
     public function index()
     {
         $categories = Category::where('status', 1)->where(function ($query) {
-            $query->where('type', 'service')->orWhere('type', 'both');
+            $query->where('type', 'event')->orWhere('type', 'both');
         })->get();
         $events = Event::with(['category', 'user'])->orderByDesc('created_at')->get();
         return view('admin.events.manage', compact('events'));

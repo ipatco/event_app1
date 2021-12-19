@@ -74,6 +74,10 @@
         .card h5{
             color: #fff !important;
         }
+        .sidebar-brand{
+            border: 5px solid black;
+            padding: 0px !important;
+        }
     </style>
 </head>
 
