@@ -11,7 +11,7 @@ class Settings extends Controller
 {
     public function changePassword()
     {
-        return view('vendor.settings.change-password');
+        return view('vendors.settings.change-password');
     }
 
     public function updatePassword(Request $request)
@@ -37,7 +37,7 @@ class Settings extends Controller
     public function profile()
     {
         $user = Auth::user();
-        return view('vendor.settings.profile', compact('user'));
+        return view('vendors.settings.profile', compact('user'));
     }
 
     public function updateProfile(Request $request)

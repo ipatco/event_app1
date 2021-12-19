@@ -20,7 +20,7 @@ class Events extends Controller
             $query->where('type', 'event')->orWhere('type', 'both');
         })->get();
         $events = Event::with(['category'])->where('user_id', '=', auth()->user()->id)->orderByDesc('created_at')->get();
-        return view('vendor.events.manage', compact('events'));
+        return view('vendors.events.manage', compact('events'));
     }
 
     /**
@@ -33,7 +33,7 @@ class Events extends Controller
         $categories = Category::where('status', 1)->where(function ($query) {
             $query->where('type', 'event')->orWhere('type', 'both');
         })->get();
-        return view('vendor.events.create', compact('categories'));
+        return view('vendors.events.create', compact('categories'));
     }
 
     /**
@@ -111,7 +111,7 @@ class Events extends Controller
         $categories = Category::where('status', 1)->where(function ($query) {
             $query->where('type', 'event')->orWhere('type', 'both');
         })->get();
-        return view('vendor.events.edit', compact('categories', 'event'));
+        return view('vendors.events.edit', compact('categories', 'event'));
     }
 
     /**

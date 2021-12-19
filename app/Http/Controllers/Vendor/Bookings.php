@@ -19,7 +19,7 @@ class Bookings extends Controller
         $categories = Category::all();
         $bookings = Booking::with(['event'])->where('vendor_id', '=', auth()->user()->id)->orderBy('id', 'desc')->get();
         // dd($bookings);
-        return view('vendor.bookings.manage', compact('bookings'));
+        return view('vendors.bookings.manage', compact('bookings'));
     }
 
     /**
@@ -32,6 +32,6 @@ class Bookings extends Controller
     {
         $booking = Booking::with(['event.category', 'user', 'vendor'])->where('vendor_id', '=', auth()->user()->id)->find($id);
         // dd($booking);
-        return view('vendor.bookings.edit', compact('booking'));
+        return view('vendors.bookings.edit', compact('booking'));
     }
 }

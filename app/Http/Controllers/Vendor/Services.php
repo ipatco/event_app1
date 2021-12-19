@@ -20,7 +20,7 @@ class Services extends Controller
             $query->where('type', 'service')->orWhere('type', 'both');
         })->get();
         $services = Service::with(['category'])->where('user_id', '=', auth()->user()->id)->orderByDesc('created_at')->get();
-        return view('vendor.services.manage', compact('services'));
+        return view('vendors.services.manage', compact('services'));
     }
 
     /**
@@ -33,7 +33,7 @@ class Services extends Controller
         $categories = Category::where('status', 1)->where(function ($query) {
             $query->where('type', 'service')->orWhere('type', 'both');
         })->get();
-        return view('vendor.services.create', compact('categories'));
+        return view('vendors.services.create', compact('categories'));
     }
 
     /**
@@ -99,7 +99,7 @@ class Services extends Controller
         $categories = Category::where('status', 1)->where(function ($query) {
             $query->where('type', 'service')->orWhere('type', 'both');
         })->get();
-        return view('vendor.services.edit', compact('categories', 'service'));
+        return view('vendors.services.edit', compact('categories', 'service'));
     }
 
     /**

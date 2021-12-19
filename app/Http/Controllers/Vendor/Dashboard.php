@@ -26,6 +26,6 @@ class Dashboard extends Controller
             $dayEarning = $dayEarning->sum('payment_amount');
             $monthEarning[$i] = $dayEarning;
         }
-        return view('vendor.dashboard', compact('service', 'event', 'upcoming', 'earning', 'monthEarning', 'thisMonth', 'numOfDays'));
+        return view('vendors.dashboard', compact('service', 'event', 'upcoming', 'earning', 'monthEarning', 'thisMonth', 'numOfDays'));
     }
 }
