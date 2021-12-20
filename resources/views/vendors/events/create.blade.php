@@ -14,6 +14,9 @@
             Back
         </a>
     </div>
+    <p class="mb-4 text-primary" style="font-size: 20px; font-weight: bold;">
+        All new events and services will be reviewed by site admin before publishing
+    </p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">

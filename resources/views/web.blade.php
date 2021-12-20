@@ -194,7 +194,7 @@
                         </form>
                         <x-nav-menu />
                     </nav>
-                    <div class="container-fluid">
+                    <div class="container-fluid" style="min-height: 90vh;">
                         @yield('page')
                     </div>
                 </div>

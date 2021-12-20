@@ -6,6 +6,7 @@ use App\Models\Event;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use App\Models\Category;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
@@ -29,23 +30,31 @@ class HomeController extends Controller
 
     public function events()
     {
-        $category = request()->category;
-        $events = Event::orderByDesc('created_at')->where('status', '=', '1')->where('end_date', '>=', date('Y-m-d'))->where(function ($query) use ($category) {
-            if ($category) {
-                $query->where('category_id', '=', $category);
+        $cat = request()->category;
+        $events = Event::orderByDesc('created_at')->where('status', '=', '1')->where('end_date', '>=', date('Y-m-d'))->where(function ($query) use ($cat) {
+            if ($cat) {
+                $query->where('category_id', '=', $cat);
             }
         })->get();
-        return view('web.events', compact('events'));
+        $category = null;
+        if ($cat) {
+            $category = Category::find($cat);
+        }
+        return view('web.events', compact('events', 'category'));
     }
 
     public function services()
     {
-        $category = request()->category;
-        $services = Service::orderByDesc('created_at')->where('status', '=', '1')->where(function ($query) use ($category) {
-            if ($category) {
-                $query->where('category_id', '=', $category);
+        $cat = request()->category;
+        $services = Service::orderByDesc('created_at')->where('status', '=', '1')->where(function ($query) use ($cat) {
+            if ($cat) {
+                $query->where('category_id', '=', $cat);
             }
         })->get();
+        $category = null;
+        if ($cat) {
+            $category = Category::find($cat);
+        }
         return view('web.services', compact('services'));
     }
 

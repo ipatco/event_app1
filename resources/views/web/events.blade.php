@@ -8,7 +8,7 @@
 
 @if (count($events) > 0)
 <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-5">
-    <h1 class="h3 mb-0 text-gray-800">Events</h1>
+    <h1 class="h3 mb-0 text-gray-800">Events  @if(isset($category)) ({{ $category->name }}) @endif </h1>
 </div>
 <div class="row">
     {{-- Events --}}
