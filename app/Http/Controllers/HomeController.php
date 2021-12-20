@@ -55,7 +55,7 @@ class HomeController extends Controller
         if ($cat) {
             $category = Category::find($cat);
         }
-        return view('web.services', compact('services'));
+        return view('web.services', compact('services', 'category'));
     }
 
     public function service_detail($slug)
