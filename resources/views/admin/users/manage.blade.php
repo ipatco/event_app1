@@ -52,7 +52,7 @@
                                 <td>{{ $user->role }}</td>
                                 <td>
                                     {{-- link to send password reset link --}}
-                                    <a href="{{ route('admin.user.send-reset-link', ['id' => $user->id]) }}" class="btn btn-primary btn-sm">Send Reset Link</a>
+                                    {{-- <a href="{{ route('admin.user.send-reset-link', ['id' => $user->id]) }}" class="btn btn-primary btn-sm">Send Reset Link</a> --}}
                                     @if($user->role != 'vendor' && $user->role != 'admin')
                                     <a href="{{ route('admin.user.vendor', ['id' => $user->id]) }}" class="btn btn-primary btn-sm">Make Vendor</a>
                                     @endif

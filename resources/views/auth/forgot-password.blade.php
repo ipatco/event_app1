@@ -22,6 +22,10 @@
                         Email Password Reset Link
                     </button>
                 </form>
+                <hr>
+                <div class="text-center">
+                    <a class="small" href="{{ route('login') }}">Back to Login</a>
+                </div>
             </div>
         </div>
     </div>
